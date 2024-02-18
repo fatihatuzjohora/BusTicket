@@ -2,10 +2,15 @@
 
 .font{
     font-family: "Inter";
-    font-family: "Raleway";
-    
 }
 
-body{
-    background-color: red;
+.font2{
+    font-family: "Raleway";
 }
+
+/* .bannarSection{
+    background-image: url(./images/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+} */
