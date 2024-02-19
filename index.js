@@ -5,6 +5,12 @@ const seatCount = document.getElementById('seat-count')
 const allSeat = document.getElementsByClassName("busSitName");
 const totalSit = document.getElementById('totalSit')
 const totalPrice = document.getElementById('total-price')
+const couponButton = document.getElementById('coupon-button')
+const couponName = document.getElementById('coupon-name');
+const grandTotal = document.getElementById('grand-total');
+const couponContainer =  document.getElementById('coupon-container')
+const phoneNumber =  document.getElementById('phone-number')
+const nextButton =  document.getElementById('next-button')
 
 for (const seat of allSeat) {
   seat.addEventListener("click", function (e) {
@@ -23,12 +29,15 @@ for (const seat of allSeat) {
       newArray.push(seatNumberDetails);
       totalMoney(newArray)
       seatNameLocation.classList.add("bg-green-500");
+  
     }
     // counting area
     const countUp = convertNumver(seatCount)+1
     seatCount.innerText = countUp;
     const finalSeat = convertNumver(totalSit)-1;
     totalSit.innerText = finalSeat
+    couponButtonActive(newArray)
+    activeNextButton()
   });
 }
 
@@ -66,3 +75,60 @@ for(const seat of ary){
 }
 totalPrice.innerText = sum
 }
+
+
+
+function couponButtonActive (ary){
+  if(ary.length>3){
+    couponButton.removeAttribute("disabled")
+  }
+}
+
+
+function getOffer(){
+  if (couponName.value === "NEW15") {
+    const currentPrice = convertNumver(totalPrice)
+    const discount  = (currentPrice *15)/100;
+    const finalPrice =  currentPrice - discount;
+    grandTotal.innerText = finalPrice;
+    couponName.value=""
+    couponContainer.classList.add('hidden')
+    
+   
+  }else if(couponName.value === "Couple 20"){
+    const currentPrice = convertNumver(totalPrice)
+    const discount  = (currentPrice *20)/100;
+    const finalPrice =  currentPrice - discount;
+    grandTotal.innerText = finalPrice;
+    couponName.value=""
+    couponContainer.classList.add('hidden')
+  }
+  else{
+    alert("wrong coupon")
+  }
+}
+
+
+phoneNumber.addEventListener("keyup",function(e){
+  const inputValue =e.target.value
+  if (!isNaN(inputValue) ) {
+  if (inputValue != "" && newArray.length != 0) {
+    nextButton.removeAttribute('disabled')
+  }else if(inputValue=== ''){
+    nextButton.setAttribute("disabled", "true");
+  }
+  else{
+    alert('should be number')
+  }
+  
+}
+})
+
+
+function activeNextButton() {
+  if (phoneNumber.value.length != 0 && newArray.length != 0) {
+    nextButton.removeAttribute("disabled");
+  } 
+}
+
+ 

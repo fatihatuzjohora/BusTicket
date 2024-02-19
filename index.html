@@ -612,18 +612,18 @@
                     <p><span>BDT</span> <span id="total-price">1100</span></p>
                   </div>
 
-                  <div class="flex justify-between bg-[while] rounded-2xl p-4">
-                    <input
+                  <div id="coupon-container" class="flex justify-between bg-[while] rounded-2xl p-4">
+                    <input id="coupon-name"
                       class="4"
                       type="Have any copupon?"
                       placeholder="Have any copupon?"
                     />
-                    <button id="" class="btn bg-[#1DD100] text-[white]">Apply</button>
+                    <button onclick="getOffer()" disabled id="coupon-button" class="btn bg-[#1DD100] text-[white]">Apply</button>
                   </div>
 
                   <div class="flex justify-between font-semibold p-2">
                     <p>Grand Total</p>
-                    <p><span>BDT</span> <span>1100</span></p>
+                    <p><span>BDT</span> <span id="grand-total">1100</span></p>
                   </div>
                 </div>
               </div>
@@ -651,7 +651,7 @@
                     >
                   </div>
                   <div>
-                    <input
+                    <input id="phone-number"
                       type="text"
                       placeholder="Enter your phone number"
                       class="input input-bordered w-full max-w-xs"
@@ -674,7 +674,7 @@
                   </div>
 
                   <div>
-                    <input
+                    <input disabled id="next-button"
                       class="btn w-full bg-[#1DD100] text-[white] mt-5"
                       type="button"
                       value="Next"
