@@ -25,9 +25,11 @@
     />
   </head>
   <body>
+  
     <div>
       <main class="max-w-[85%] mx-auto">
         <!-- navStart  max-w-[1200px] mx-auto -->
+        
         <header class="font2">
           <div class="navbar bg-base-100">
             <div class="navbar-start">
@@ -80,6 +82,7 @@
   </div>
           </div>
         </header>
+
         <!-- navEnd  -->
 
         <body>
@@ -246,6 +249,24 @@
           </section>
         </body>
       </main>
+
+      <section id="popUp" class="top-1/4 bg-slate-300 p-[30px] rounded-2xl flex w-[60%]  mx-auto justify-center items-center sticky hidde ">
+        <div class=" w-[70%] bg-white p-10 rounded-2xl">
+          <div class="flex justify-center items-center ">
+            <img src="./images/success.png" alt="Shoes" class="rounded-xl" />
+          </div>
+          <div class="card-body items-center text-center">
+            <h3 class="text-green-500 font-bold text-3xl mt-4 text-center">SUCCESS</h3>
+            <h4 class="text-center font-bold">Thank you for Booking Our Bus Seats. 
+              We are working hard to find the best service and deals for you.</h4>
+              <p class="text-center">Shortly you will find a confirmation in your email.</p>
+            <div class="card-actions">
+              <button onclick="confirm()" class="btn w-full mx-auto bg-green-700 text-2xl font-semibold text-white mt-3">continue</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <section
         class="bg-[#F7F8F8] rounded-[30px] border-t-2 border-[#1DD100] pb-10 mt-10"
@@ -674,7 +695,7 @@
                   </div>
 
                   <div>
-                    <input disabled id="next-button"
+                    <input onclick="successMessage()" disabled id="next-button"
                       class="btn w-full bg-[#1DD100] text-[white] mt-5"
                       type="button"
                       value="Next"
@@ -696,6 +717,7 @@
           </div>
         </div>
       </section>
+ 
       <footer class="">
         <div class="bg-[#030712] h-[400px] p-10">
           <div
@@ -735,6 +757,8 @@
           </div>
         </div>
       </footer>
+   
+      
 
       <script src="index.js"></script>
     </div>

@@ -10,7 +10,8 @@ const couponName = document.getElementById('coupon-name');
 const grandTotal = document.getElementById('grand-total');
 const couponContainer =  document.getElementById('coupon-container')
 const phoneNumber =  document.getElementById('phone-number')
-const nextButton =  document.getElementById('next-button')
+const nextButton =  document.getElementById('next-button');
+const popUp = document.getElementById('popUp')
 
 for (const seat of allSeat) {
   seat.addEventListener("click", function (e) {
@@ -118,7 +119,7 @@ phoneNumber.addEventListener("keyup",function(e){
     nextButton.setAttribute("disabled", "true");
   }
   else{
-    alert('should be number')
+    alert('should be number or should be selected a seat')
   }
   
 }
@@ -131,4 +132,11 @@ function activeNextButton() {
   } 
 }
 
- 
+ function confirm(){
+  popUp.classList.add('hidden')
+ }
+
+ function successMessage(){
+  popUp.classList.remove('hidden')
+  
+ }
